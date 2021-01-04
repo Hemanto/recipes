@@ -1,0 +1,13 @@
+1. 
+nav -> 2 item (home, favourite)
+2. search (later)
+3. filter
+4. item render(image, title)
+5. details page
+6. add to favourite
+7. favourite page fetch data from local storage
+8. auto switch to favourtite if no api call
+9. only one api call
+
+//Questions
+1. how to change the title Icon
