@@ -11,3 +11,6 @@ nav -> 2 item (home, favourite)
 
 //Questions
 1. how to change the title Icon
+
+2. create the links 
+3 state managment
