@@ -4,21 +4,25 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 //import Footer from '../Components/Footer'
 import Nav from '../src/Components/Nav'
 //import Search from '../Components/Search'
-import CatDetails from '../src/Layouts/CatDetails'
+import Category from './Layouts/Category'
 import Favourite from './Components/Favourite'
 import Home from './Layouts/Home'
+import Details from './Layouts/Details'
 const Routes = () => {
     return (
         <BrowserRouter>
             <Nav />
             <Switch>
-                <Route path='/category'>
-                    <CatDetails />
+                <Route exact path='/category'>
+                    <Category />
                 </Route>
                 <Route path='/favourite'>
                     <Favourite/>
                 </Route>
-                <Route path='/ '>
+                <Route path='/category/details/:id '>
+                    <Details/>
+                </Route>
+                <Route exact path='/'>
                     <Home/>
                 </Route>
             </Switch>
