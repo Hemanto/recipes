@@ -1,0 +1,15 @@
+> Folder strcture 
+> Action file--> action type-> action
+fuction returb object with key: type and optional value data.
+
+> Reducer--> 1. action type import 
+2. initial state set 
+3. set reducer function
+
+> combine all reducer
+> define all the reducer with key 
+
+>import reducer from reducer file location ;createStore and provider from redux in App.js
+>create store
+>wrap all the components using provider
+>pass store as a props in provider
