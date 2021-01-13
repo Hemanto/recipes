@@ -19,7 +19,8 @@ const Routes = () => {
                 <Route path='/favourite'>
                     <Favourite/>
                 </Route>
-                <Route path='/category/details/:id '>
+     
+                <Route path='/details/:id'>
                     <Details/>
                 </Route>
                 <Route exact path='/'>

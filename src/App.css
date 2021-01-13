@@ -45,3 +45,10 @@
   background-color: salmon;
   font-family: auto;
 }
+a:link{
+  text-decoration: none;
+}
+
+li{
+  list-style: none;
+}
