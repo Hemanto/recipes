@@ -2,12 +2,14 @@ import {
   VALUE_UPDATE,
   SET_VALUE,
   SET_RANDON_RECIPES,
+  FILTER_RECIPES
 } from "../actions/FetchAction";
 
 const initialState = {
   value: 1,
   name: "",
   recipes: [],
+  filter_recipes: []
   // curr_recipie: []
 };
 
@@ -21,6 +23,8 @@ const FetchReducer = (state = initialState, action) => {
     case SET_RANDON_RECIPES:
       localStorage.setItem("Random_Recipes", action.data);
       return { ...state, recipes: action.data };
+    case FILTER_RECIPES:
+      return { ...state, filter_recipes: action.data }
     default:
       return state;
   }

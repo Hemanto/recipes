@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 
 const CatDetails = (props) => {
-  console.log('check i d', props.item.id);
+  // console.log('check i d', props.item.id);
   return (
     <Link to={`/details/${props.item.id}/`}>
       <div className="categoy">
