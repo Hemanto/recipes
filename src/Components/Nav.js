@@ -12,7 +12,7 @@ const Nav = () => {
                 <li>Category</li>
             </Link>
             <Link to='/Favourite'>
-                <Favourite />
+                Favourite
             </Link>
         </nav>
     )

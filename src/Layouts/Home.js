@@ -58,7 +58,8 @@ const Home = () => {
     <>
       <Filter />
       <div className='displyrep'>
-        {fld.map(item =>
+
+        {state.filter_recipes.map(item =>
           <Category key={item.id} item={item} />
         )}
         hi

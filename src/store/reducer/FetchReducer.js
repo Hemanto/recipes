@@ -2,13 +2,14 @@ import {
   VALUE_UPDATE,
   SET_VALUE,
   SET_RANDON_RECIPES,
-  FILTER_RECIPES
+  FILTER_RECIPES, FAVOURIT_RECIPES, favouritRecipes
 } from "../actions/FetchAction";
 
 const initialState = {
   value: 1,
   name: "",
   recipes: [],
+  favouritRecipes: [],
   filter_recipes: []
   // curr_recipie: []
 };
@@ -25,6 +26,9 @@ const FetchReducer = (state = initialState, action) => {
       return { ...state, recipes: action.data };
     case FILTER_RECIPES:
       return { ...state, filter_recipes: action.data }
+    case FAVOURIT_RECIPES:
+      localStorage.setItem("Fav_Recipes", JSON.stringify([...state.favouritRecipes, action.data]));
+      return { ...state, favouritRecipes: [...state.favouritRecipes, action.data] }
     default:
       return state;
   }
