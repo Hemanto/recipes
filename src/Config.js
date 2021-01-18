@@ -7,8 +7,23 @@ export const Random_recipes = (count) => {
   return `https://api.spoonacular.com/recipes/random?apiKey=6f57734196684cecb7ec58a0c69a76c7&number=${count}&includeNutrition=true`;
 }
 
+export const Diet = (diettile) => {
+  return `https://api.spoonacular.com/recipes/complexSearch?diet=${diettile}&apiKey=6f57734196684cecb7ec58a0c69a76c7&number=20&includeNutrition=true`
+}
+
 // API DOC =  https://developer.edamam.com/edamam-docs-recipe-api
 
 //https://api.spoonacular.com/recipes/random?apiKey=6f57734196684cecb7ec58a0c69a76c7&number=20&includeNutrition=true.
 
 // doc  https://spoonacular.com/food-api/docs
+
+
+
+//Diet
+//https://api.spoonacular.com/recipes/complexSearch?diet=vegetarian&apiKey=6f57734196684cecb7ec58a0c69a76c7&number=20&includeNutrition=true
+
+//id
+//https://api.spoonacular.com/recipes/716429/information?includeNutrition=false&apiKey=6f57734196684cecb7ec58a0c69a76c7
+
+//title
+//https://api.spoonacular.com/recipes/complexSearch?titleMatch=Crispy&apiKey=6f57734196684cecb7ec58a0c69a76c7

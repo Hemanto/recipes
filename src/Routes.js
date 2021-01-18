@@ -5,6 +5,8 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import Nav from '../src/Components/Nav'
 //import Search from '../Components/Search'
 import Category from './Layouts/Category'
+import Catgy from './Layouts/Catgy'
+import moduleName from 'module'
 import Favourite from './Components/Favourite'
 import Home from './Layouts/Home'
 import Details from './Layouts/Details'
@@ -14,17 +16,16 @@ const Routes = () => {
             <Nav />
             <Switch>
                 <Route exact path='/category'>
-                    <Category />
+                    <Catgy />
                 </Route>
                 <Route path='/favourite'>
-                    <Favourite/>
+                    <Favourite />
                 </Route>
-     
                 <Route path='/details/:id'>
-                    <Details/>
+                    <Details />
                 </Route>
                 <Route exact path='/'>
-                    <Home/>
+                    <Home />
                 </Route>
             </Switch>
         </BrowserRouter>
