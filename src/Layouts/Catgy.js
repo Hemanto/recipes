@@ -41,41 +41,65 @@ const Catgy = () => {
 
     const state = useSelector(state => state.xyz)
 
-    // const data = localdata.filter(item => {
+    const CategorisedData = {
+        veg: [],
+        vegan: [],
+        gluten: []
+    }
+    // const {veg, nonveg, gluten} = localdata.reduce((acc, item) => {
     //     if (item.vegetarian) {
-    //         localStorage.setItem("vegetarian", JSON.stringify([item]));
-    //         console.log(item);
+    //         acc.veg.push(item)
     //     } else if (item.vegan) {
-    //         localStorage.setItem("vegan", JSON.stringify([item]));
+    //         acc.nonveg.push(item)
     //     } else if (item.glutenFree) {
-    //         localStorage.setItem("glutenFree", JSON.stringify([item]));
-    //     } else {
-    //         localStorage.setItem("All", JSON.stringify([item]));
+    //         acc.gluten.push(item)
     //     }
-    // })
+    //     return acc
+    // }, CategorisedData)
+    localdata.forEach(item => {
+        if (item.vegetarian) {
+            CategorisedData.veg.push(item)
+        } else if (item.vegan) {
+            CategorisedData.vegan.push(item)
+        } else if (item.glutenFree) {
+            CategorisedData.gluten.push(item)
+        }
+    });
 
-    const vergit = localdata.filter(item => item.vegetarian)
-    console.log(vergit);
+
+    // const vergit = localdata.filter(item => item.vegetarian)
+    // console.log(vergit);
     useEffect(() => {
-        console.log(localdata);
-        const data = localdata.map(item => {
-            if (item.vegetarian) {
-                localStorage.setItem("vegetarian", JSON.stringify([item]));
-            } else {
-                localStorage.setItem("Non-vegetarian", JSON.stringify([item]));
-            }
-        })
+        // console.log(localdata);
+        // const data = localdata.map(item => {
+        //     if (item.vegetarian) {
+        //         localStorage.setItem("vegetarian", JSON.stringify([item]));
+        //     } else {
+        //         localStorage.setItem("Non-vegetarian", JSON.stringify([item]));
+        //     }
+        // })
+        localStorage.setItem("vegetarian", JSON.stringify(CategorisedData.veg));
+        localStorage.setItem("vegan", JSON.stringify(CategorisedData.vegan));
+        localStorage.setItem("glutenFree", JSON.stringify(CategorisedData.gluten));
 
     }, [])
+    const [catdata, setCatdata] = useState([])
+    const postcar = (catitem) => {
+        setCatdata(JSON.parse(localStorage.getItem(catitem)) || [])
+        console.log(catdata);
+    }
 
     return (
         <div>
             <h1>Find the wide range of recipes</h1>
-            <button onClick={vegetarian => get("vegetarian")}>VEG</button>
+            <img onClick={() => postcar('vegetarian')} src="https://miro.medium.com/max/10000/0*wZAcNrIWFFjuJA78" alt="image" width='400' />
+            <img onClick={() => postcar('glutenFree')} src="https://miro.medium.com/max/10000/0*wZAcNrIWFFjuJA78" alt="image" width='400' />
+            <img onClick={() => postcar('vegan')} src="https://miro.medium.com/max/10000/0*wZAcNrIWFFjuJA78" alt="image" width='400' />
+            {/* <button onClick={vegetarian => get("vegetarian")}>VEG</button>
             <button onClick={(Paleo) => get('Paleo')}>Non-VEG</button>
             <button onClick={(vegan) => get('vegan')}>vegan</button>
-            <button onClick={(glutenFree) => get('glutenFree')}>glutenFree</button>
-            {catrecips.map(item => <CatCard key={item.id} item={item} />)}
+            <button onClick={(glutenFree) => get('glutenFree')}>glutenFree</button>*/}
+            {catdata.map(item => <CatCard key={item.id} item={item} />)}
         </div>
     )
 }
